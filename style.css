@@ -6,6 +6,7 @@
     --spacing:20px;
     --type-font:helvetica;
     --words-space:0.5px;
+    --left-spacing:40px;
 
 
 }
@@ -248,3 +249,62 @@ ul
 {
     border-bottom:3px solid #06aae2;
 } */
+
+.testimonials-wrapper
+{
+    display:grid;
+    border:1px solid #000;
+    grid-template-columns: repeat(auto-fit,minmax(300px,500px));
+    grid-gap:20px;
+   justify-content: center;
+   align-content:center;
+   height: 100%;
+}
+
+.card
+{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 300px;
+    grid-gap:0;
+    grid-template-areas: 
+    "card-video-container"
+    "card-info-container";
+      border:1px solid grey;  
+   
+   
+}
+
+.card-video-container
+{
+    grid-area:card-video-container;
+    /* border:1px solid red; */
+}
+.card-info-container
+{
+    grid-area:card-info-container;
+    /* border:1px solid green; */
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card-title
+{
+  font-size: 2.2rem;
+  font-style: var(--type-font);
+  margin-bottom: 0px;
+  padding-left:var(--left-spacing);
+}
+
+.card span
+{
+    font-size: 1.5rem;
+    padding-left:var(--left-spacing);
+}
+.card p
+{
+    font-size: 1.7rem;
+    padding-left:var(--left-spacing);
+  
+}

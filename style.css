@@ -6,7 +6,7 @@
     --spacing:20px;
     --type-font:helvetica;
     --words-space:0.5px;
-    --left-spacing:40px;
+    --left-spacing:30px;
 
 
 }
@@ -53,6 +53,7 @@
     width:100%;
     /* height:910px; */
     border:1px solid grey;
+    
 
 }
 
@@ -95,6 +96,8 @@ ul
     height:700px;
     background:#f4f4f4; 
     box-shadow: 0px -13px 6px -15px #111;
+    position:relative;
+
     /* border:1px solid purple; */
 }
 
@@ -108,9 +111,11 @@ ul
     grid-gap:20px;
     grid-template-areas:
     "info-container video-container";
-    border:1px solid yellow;
+    /* border:1px solid yellow; */
     height:100%;
-
+    width:100%;
+    position:absolute;
+   z-index:2;
 }
 
 .info-container
@@ -134,10 +139,12 @@ ul
 
 /* SECOND TAB STYLE */
 
+
+
 .info-container-wrapper
 {
   width:100%;
-  display: grid;
+  display: none;
   grid-template-columns:0.5fr 1fr;
   grid-template-rows: 200px 150px 100px;
   grid-template-areas:
@@ -205,7 +212,7 @@ ul
 {
     /* border:1px solid black; */
     position:relative; 
-    display:grid;
+    display:none;
     grid-template-columns: 1fr;
     grid-template-rows:320px 100px;
     grid-template-areas:
@@ -229,7 +236,7 @@ ul
 }
 .menu-video ul
 {
-    display: flex;
+    display: none;
     flex-direction: row;
 }
 
@@ -252,13 +259,14 @@ ul
 
 .testimonials-wrapper
 {
-    display:grid;
-    border:1px solid #000;
-    grid-template-columns: repeat(auto-fit,minmax(300px,500px));
+    display:none;
+    border:1px solid red;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     grid-gap:20px;
-   justify-content: center;
-   align-content:center;
-   height: 100%;
+    position:absolute;
+    
+  
+  
 }
 
 .card
@@ -270,7 +278,8 @@ ul
     grid-template-areas: 
     "card-video-container"
     "card-info-container";
-      border:1px solid grey;  
+      border:1px solid grey; 
+      align-content: space-between; 
    
    
 }
@@ -278,12 +287,12 @@ ul
 .card-video-container
 {
     grid-area:card-video-container;
-    /* border:1px solid red; */
+     border:1px solid red; 
 }
 .card-info-container
 {
     grid-area:card-info-container;
-    /* border:1px solid green; */
+     border:1px solid green; 
     display: flex;
     flex-direction: column;
 
@@ -291,7 +300,7 @@ ul
 
 .card-title
 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-style: var(--type-font);
   margin-bottom: 0px;
   padding-left:var(--left-spacing);

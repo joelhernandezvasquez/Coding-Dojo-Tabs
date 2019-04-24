@@ -11,9 +11,9 @@
        
         <ul class="menu">
 
-            <li> <a href="#"> Who is Coding Dojo?</a></li>
-            <li> <a href="#"> Life as Student</a> </li>
-            <li> <a href="#"> Alumni Testimonials </a></li>
+            <li> <a href="#" class="link-selected" data-link="home"> Who is Coding Dojo?</a></li>
+            <li> <a href="#" data-link="life"> Life as Student</a> </li>
+            <li> <a href="#" data-link="alumni"> Alumni Testimonials </a></li>
         </ul>
 
         <div class="tab-container">
@@ -39,9 +39,7 @@
             
           </div>
 
-            <div class="tab">
-             
-                <div class="tab2-wrapper"></div>  
+             <div class="tab-life-student">
                 <div class="info-container">
 
                       <div class="info-container-wrapper">
@@ -102,11 +100,13 @@
             </div>  
               
            </div> 
-          </div>  
+
+           </div>
+          
 
 
 
-        </div>
+        
 
         <div class="testimonials-wrapper">
 
@@ -157,6 +157,25 @@
 
      </div>
 
+      <script>
+      
+      const mainMenu = document.querySelector(".menu");
+
+      mainMenu.addEventListener("click",e =>
+      {
+        if(e.target.closest("li"))
+        {
+          const link = document.querySelector(".link-selected");
+          const newLink = e.target;
+          
+          link.classList.remove("link-selected");
+          newLink.classList.add("link-selected");
+
+        }
+      }
+      );
+      
+      </script>
 
 </body>
 

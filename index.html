@@ -18,7 +18,7 @@
 
         <div class="tab-container">
 
-          <div class="tab">
+          <div class="tab tab-selected">
 
             <div class="info-container">
 
@@ -93,9 +93,9 @@
 
               <ul>
 
-                <li><a href="#"> Week 4 - 6</a></li>
-                <li><a href="#"> Week 6 - 12</a></li>
-                <li><a href="#"> Week 13 - 14</a></li>
+                <li><a href="#" data-video="week 4"> Week 4 - 6</a></li>
+                <li><a href="#" data-video="week 6"> Week 6 - 12</a></li>
+                <li><a href="#" data-video="week 13"> Week 13 - 14</a></li>
               </ul>
             </div>  
               
@@ -160,6 +160,7 @@
       <script>
       
       const mainMenu = document.querySelector(".menu");
+      const videoMenu = document.querySelector(".menu-video");
 
       mainMenu.addEventListener("click",e =>
       {
@@ -167,13 +168,60 @@
         {
           const link = document.querySelector(".link-selected");
           const newLink = e.target;
+          const activeTab = document.querySelector(".tab-selected");
           
           link.classList.remove("link-selected");
           newLink.classList.add("link-selected");
 
+          if(e.target.dataset.link ==="home")
+          {
+            const homeTab = document.querySelector(".tab");
+
+
+            activeTab.style.display="none";
+
+            homeTab.classList.add("tab-selected");
+            homeTab.style.display ="grid";
+            return;
+
+          }
+
+          if(e.target.dataset.link==="life")
+          {
+            const lifeTab = document.querySelector(".tab-life-student");
+
+            activeTab.style.display="none";
+            activeTab.classList.remove("tab-selected");
+
+            lifeTab.classList.add("tab-selected");
+            lifeTab.style.display ="grid";
+            return;
+          }
+
+          if(e.target.dataset.link==="alumni")
+          {
+            const alumniTab = document.querySelector(".testimonials-wrapper");
+
+            activeTab.style.display="none";
+            activeTab.classList.remove("tab-selected");
+
+            alumniTab.classList.add("tab-selected");
+            alumniTab.style.display ="grid";
+            return;
+
+
+          }
         }
       }
       );
+
+      videoMenu.addEventListener("click",e=>
+      {
+            if(e.target.closest("li"))
+            {
+              
+            }
+      })
       
       </script>
 

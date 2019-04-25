@@ -274,7 +274,7 @@ ul
 /* THIRD TAB STYLE */
 .testimonials-wrapper
 {
-    display:grid;
+    display:none;
     justify-content: center;
     align-content: center;
     grid-template-columns: repeat(auto-fit,minmax(200px,400px));
@@ -286,7 +286,7 @@ ul
 
 .card
 {
-    display:none;
+    display:grid;
     grid-template-columns: 1fr;
     grid-template-rows: 300px 300px;
     grid-gap:0;
@@ -342,3 +342,12 @@ ul
     background:#f4f4f4;
 }
 
+.tab-selected
+{
+
+}
+
+.show-content
+{
+    display: grid;
+}

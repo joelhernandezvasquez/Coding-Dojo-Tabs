@@ -74,26 +74,24 @@
                 
                    <div class="video-container-wrapper">
                 
-                <div class="video-item">
+                <div class="video-item video-item-display" id="first-video-item">
                     <iframe width="600" height="400" src="https://www.youtube.com/embed/aPXn-8SCjqs?controls=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
                     </div>
 
-                    <div class="video-item">
+                    <div class="video-item" id="second-video-item">
                       <iframe width="600" height="400" src="https://www.youtube.com/embed/bo82NJ30lmo?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
 
-                    <div class="video-item">
+                    <div class="video-item" id="third-video-item">
                       <iframe width="600" height="400" src="https://www.youtube.com/embed/tIkuaLfgQVY?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
 
-                    
-                    
-            </div> 
+                     </div> 
             <div class="menu-video">
 
               <ul>
 
-                <li><a href="#" data-video="week 4"> Week 4 - 6</a></li>
+                <li><a href="#" class="video-selected" data-video="week 4"> Week 4 - 6</a></li>
                 <li><a href="#" data-video="week 6"> Week 6 - 12</a></li>
                 <li><a href="#" data-video="week 13"> Week 13 - 14</a></li>
               </ul>
@@ -219,7 +217,44 @@
       {
             if(e.target.closest("li"))
             {
-              
+              const videoSelected = document.querySelector(".video-selected");
+              const newVideoSelected = e.target;
+
+             videoSelected.classList.remove("video-selected");
+             newVideoSelected.classList.add("video-selected");
+
+               if(e.target.dataset.video==="week 4")
+               {
+                 const activeVideo = document.querySelector(".video-item-display");
+                 const newActiveVideo = document.querySelector("#first-video-item");
+
+                 activeVideo.classList.remove("video-item-display");
+                 newActiveVideo.classList.add("video-item-display");
+                 return;
+                 
+               }
+
+               if(e.target.dataset.video==="week 6")
+               {
+                 const activeVideo = document.querySelector(".video-item-display");
+                 const newActiveVideo = document.querySelector("#second-video-item");
+
+                 activeVideo.classList.remove("video-item-display");
+                 newActiveVideo.classList.add("video-item-display");
+                 return;
+                 
+               }
+               if(e.target.dataset.video==="week 13")
+               {
+                 const activeVideo = document.querySelector(".video-item-display");
+                 const newActiveVideo = document.querySelector("#third-video-item");
+
+                 activeVideo.classList.remove("video-item-display");
+                 newActiveVideo.classList.add("video-item-display");
+                 return;
+                 
+               }
+
             }
       })
       

@@ -232,8 +232,6 @@ ul
     grid-template-areas:
     "video-item"
     "menu-video";
-    
-
 }
 
 .video-item
@@ -241,6 +239,11 @@ ul
     grid-area:video-item;
     position:absolute;
     height:400px;
+}
+
+.video-item-display
+{
+    z-index: 2;
 }
 .menu-video
 {
@@ -340,14 +343,27 @@ ul
     font-weight:bold;
     border-bottom: 5px solid #06aae2;
     background:#f4f4f4;
+   
+    
 }
+
+.video-selected
+{
+    border-bottom: 5px solid #06aae2;
+   
+}
+
 
 .tab-selected
 {
 
 }
 
-.show-content
+.show-content 
 {
     display: grid;
+  
+
 }
+
+

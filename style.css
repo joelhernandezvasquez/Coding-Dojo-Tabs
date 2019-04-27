@@ -113,7 +113,10 @@ ul
     height:100%;
     width:100%;
     position:absolute;
-   z-index:2;
+    opacity: 0;
+    transition:opacity 0.5s ease-out;
+    z-index: 1;
+   
 }
 
 .info-container
@@ -139,7 +142,7 @@ ul
 
 .tab-life-student
 {
-    display:none;
+    display:grid;
     justify-content: center;
     align-content: center;
     grid-template-columns: repeat(2,600px);
@@ -151,8 +154,9 @@ ul
     height:100%;
     width:100%;
     position:absolute;
-    /* opacity: 0;
-   transition:opacity 0.5s ease;  */
+     opacity: 0;
+   transition:opacity 0.5s ease-out;  
+   z-index: 1; 
 }
 
 .info-container-wrapper
@@ -277,7 +281,7 @@ ul
 /* THIRD TAB STYLE */
 .testimonials-wrapper
 {
-    display:none;
+    display:grid;
     justify-content: center;
     align-content: center;
     grid-template-columns: repeat(auto-fit,minmax(200px,400px));
@@ -285,8 +289,9 @@ ul
     position:absolute;
     width: 100%;
     height:100%;
-     /* opacity: 0;
-    transition:opacity 0.5s;  */
+    opacity: 0;
+    transition:opacity 0.5s ease-out;  
+    z-index: 1;  
 }
 
 .card
@@ -361,14 +366,23 @@ ul
 
 }
 
+.show-content.tab
+{
+
+    opacity: 1;
+    z-index:5;
+}
 .show-content.tab-life-student 
 {
-    /* display: grid; */
-    opacity:1;
+    
+    opacity:1; 
+    z-index:5;
 }
 .show-content.testimonials-wrapper
 {
-    opacity: 1;
+   
+     opacity: 1; 
+     z-index:5;
 }
 
 

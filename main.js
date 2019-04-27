@@ -10,6 +10,28 @@ function selectTab(e)
     selectActiveTab(e);
 }
 
+function removeActiveTabStyle(activeTab)
+{
+  
+  if(activeTab.classList.contains("tab"))
+  {
+     activeTab.classList.remove("show-content");
+     return;
+  }
+  
+  if(activeTab.classList.contains("tab-life-student"))
+  {
+    activeTab.classList.remove("show-content");
+    return;
+  }
+
+  if(activeTab.classList.contains("testimonials-wrapper"))
+  {
+   activeTab.classList.remove("show-content");
+    return;
+  }
+}
+
 function selectActiveTab(e)
 {
     const activeTab = document.querySelector(".tab-selected");
@@ -17,39 +39,28 @@ function selectActiveTab(e)
     if(e.target.dataset.link ==="home")
     {
       const homeTab = document.querySelector(".tab");
-      activeTab.style.display="none";
-
+      removeActiveTabStyle(activeTab);
       homeTab.classList.add("tab-selected");
-      homeTab.style.display ="grid";
+      homeTab.classList.add("show-content");
       return;
-
     }
 
     if(e.target.dataset.link==="life")
           {
             const lifeTab = document.querySelector(".tab-life-student");
-
-            activeTab.style.display="none";
-            
+            removeActiveTabStyle(activeTab);
             activeTab.classList.remove("tab-selected");
-
             lifeTab.classList.add("tab-selected");
             lifeTab.classList.add("show-content");
-            lifeTab.style.display ="grid";
             return;
           }
       if(e.target.dataset.link==="alumni")
           {
             const alumniTab = document.querySelector(".testimonials-wrapper");
-
-            activeTab.style.display="none";
-           
+            removeActiveTabStyle(activeTab);
             activeTab.classList.remove("tab-selected");
-            
-
             alumniTab.classList.add("tab-selected");
-
-           alumniTab.style.display ="grid";
+            alumniTab.classList.add("show-content");
             return;
           }
 }
